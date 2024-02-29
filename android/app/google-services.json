@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089764705575",
+    "project_id": "orangevistaappdemo",
+    "storage_bucket": "orangevistaappdemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089764705575:android:d10374081980b9684b9502",
+        "android_client_info": {
+          "package_name": "com.orangevista.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW0RfwTZ6m9DqfUkSDb7_NFH_iLLWRFFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
