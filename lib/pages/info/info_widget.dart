@@ -157,7 +157,7 @@ class _InfoWidgetState extends State<InfoWidget> {
                                             child: Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
-                                              child: Text(
+                                              child: AutoSizeText(
                                                 'Bell Schedules',
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -240,7 +240,7 @@ class _InfoWidgetState extends State<InfoWidget> {
                                             child: Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
-                                              child: Text(
+                                              child: AutoSizeText(
                                                 'Aeries Portal',
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -326,7 +326,7 @@ class _InfoWidgetState extends State<InfoWidget> {
                                             child: Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
-                                              child: Text(
+                                              child: AutoSizeText(
                                                 'ASB Webstore',
                                                 textAlign: TextAlign.center,
                                                 style:
@@ -409,7 +409,7 @@ class _InfoWidgetState extends State<InfoWidget> {
                                             child: Align(
                                               alignment: const AlignmentDirectional(
                                                   0.0, 0.0),
-                                              child: Text(
+                                              child: AutoSizeText(
                                                 'Flextime Manager',
                                                 textAlign: TextAlign.center,
                                                 style:

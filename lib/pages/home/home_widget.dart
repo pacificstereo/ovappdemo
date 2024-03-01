@@ -576,35 +576,46 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   height: 75.0,
                                   decoration: const BoxDecoration(),
                                   alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 2.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Coyote Spotlight',
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .displayLarge
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: const Color(0x7FE36D00),
-                                            fontSize: 45.0,
-                                          ),
+                                  child: Container(
+                                    height: 60.0,
+                                    decoration: const BoxDecoration(),
+                                    child: Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 2.0, 0.0, 0.0),
+                                      child: AutoSizeText(
+                                        'Coyote Spotlight',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .displayLarge
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color: const Color(0x7FE36D00),
+                                              fontSize: 45.0,
+                                            ),
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                            Text(
-                              'Coyote Spotlight',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .displayLarge
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    fontSize: 45.0,
-                                  ),
+                            Align(
+                              alignment: const AlignmentDirectional(0.0, 0.0),
+                              child: Container(
+                                height: 60.0,
+                                decoration: const BoxDecoration(),
+                                child: AutoSizeText(
+                                  'Coyote Spotlight',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .displayLarge
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondary,
+                                        fontSize: 45.0,
+                                      ),
+                                ),
+                              ),
                             ),
                           ],
                         ),

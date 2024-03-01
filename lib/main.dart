@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -6,8 +5,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
@@ -17,10 +14,12 @@ void main() async {
   usePathUrlStrategy();
   await initFirebase();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   // This widget is the root of your application.
   @override
   State<MyApp> createState() => _MyAppState();
@@ -30,23 +29,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, child) {
-        return Builder(
-          builder: (context) {
-            // Set the global text scale factor to 1
-            return MediaQuery(
-              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: child!,
-            );
-          },
-        );
-      },
-      home: HomeWidget(),
-    );
-  }
   ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
@@ -61,7 +43,7 @@ class _MyAppState extends State<MyApp> {
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
 
-    Future.delayed(Duration(milliseconds: 1000),
+    Future.delayed(const Duration(milliseconds: 1000),
         () => setState(() => _appStateNotifier.stopShowingSplashImage()));
   }
 
@@ -73,7 +55,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'ov-r3',
-      localizationsDelegates: [
+      localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -85,12 +67,12 @@ class _MyAppState extends State<MyApp> {
           thickness: MaterialStateProperty.all(0.0),
           thumbColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.dragged)) {
-              return Color(0);
+              return const Color(0x00000000);
             }
             if (states.contains(MaterialState.hovered)) {
-              return Color(0);
+              return const Color(0x00000000);
             }
-            return Color(0);
+            return const Color(0x00000000);
           }),
         ),
       ),
@@ -101,7 +83,7 @@ class _MyAppState extends State<MyApp> {
 }
 
 class NavBarPage extends StatefulWidget {
-  NavBarPage({Key? key, this.initialPage, this.page}) : super(key: key);
+  const NavBarPage({super.key, this.initialPage, this.page});
 
   final String? initialPage;
   final Widget? page;
@@ -125,9 +107,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'home': HomeWidget(),
-      'info': InfoWidget(),
-      'connect': ConnectWidget(),
+      'home': const HomeWidget(),
+      'info': const InfoWidget(),
+      'connect': const ConnectWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -148,12 +130,12 @@ class _NavBarPageState extends State<NavBarPage> {
         }),
         backgroundColor: FlutterFlowTheme.of(context).tertiary,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
-        unselectedItemColor: Color(0x80FFFFFF),
-        selectedBackgroundColor: Color(0x00000000),
+        unselectedItemColor: const Color(0x80FFFFFF),
+        selectedBackgroundColor: const Color(0x00000000),
         borderRadius: 50.0,
         itemBorderRadius: 8.0,
-        margin: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+        margin: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
         width: 250.0,
         elevation: 0.0,
         items: [
@@ -165,7 +147,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   currentIndex == 0 ? Icons.home_rounded : Icons.home_outlined,
                   color: currentIndex == 0
                       ? FlutterFlowTheme.of(context).primary
-                      : Color(0x80FFFFFF),
+                      : const Color(0x80FFFFFF),
                   size: currentIndex == 0 ? 30.0 : 30.0,
                 ),
               ],
@@ -181,7 +163,7 @@ class _NavBarPageState extends State<NavBarPage> {
                       : Icons.info_outline_rounded,
                   color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).primary
-                      : Color(0x80FFFFFF),
+                      : const Color(0x80FFFFFF),
                   size: currentIndex == 1 ? 30.0 : 30.0,
                 ),
               ],
@@ -195,7 +177,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   Icons.language_rounded,
                   color: currentIndex == 2
                       ? FlutterFlowTheme.of(context).primary
-                      : Color(0x80FFFFFF),
+                      : const Color(0x80FFFFFF),
                   size: 30.0,
                 ),
               ],
