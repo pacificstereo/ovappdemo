@@ -29,6 +29,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      builder: (context, child) {
+        return Builder(
+          builder: (context) {
+            // Set the global text scale factor to 1
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: child!,
+            );
+          },
+        );
+      },
+    );
+  }
+  
   ThemeMode _themeMode = ThemeMode.system;
 
   late AppStateNotifier _appStateNotifier;
