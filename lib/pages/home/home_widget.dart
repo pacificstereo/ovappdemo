@@ -687,21 +687,49 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               width: 200.0,
                                               height: 225.0,
                                               decoration: const BoxDecoration(),
-                                              child: AutoSizeText(
-                                                valueOrDefault<String>(
-                                                  clubSpotlightHomePageRecord
-                                                      ?.body.first,
-                                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontWeight:
-                                                              FontWeight.w500,
+                                              child: Builder(
+                                                builder: (context) {
+                                                  final bodyClub =
+                                                      clubSpotlightHomePageRecord
+                                                              ?.body
+                                                              .toList() ??
+                                                          [];
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: List.generate(
+                                                        bodyClub.length,
+                                                        (bodyClubIndex) {
+                                                      final bodyClubItem =
+                                                          bodyClub[
+                                                              bodyClubIndex];
+                                                      return Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: AutoSizeText(
+                                                          bodyClubItem,
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
                                                         ),
+                                                      );
+                                                    }).divide(
+                                                        const SizedBox(height: 5.0)),
+                                                  );
+                                                },
                                               ),
                                             ),
                                           ),
@@ -955,21 +983,45 @@ class _HomeWidgetState extends State<HomeWidget> {
                                               width: 200.0,
                                               height: 225.0,
                                               decoration: const BoxDecoration(),
-                                              child: AutoSizeText(
-                                                valueOrDefault<String>(
-                                                  businessSpotlightHomePageRecord
-                                                      ?.body.first,
-                                                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                              child: Builder(
+                                                builder: (context) {
+                                                  final bodyBusiness =
+                                                      businessSpotlightHomePageRecord
+                                                              ?.body
+                                                              .toList() ??
+                                                          [];
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: List.generate(
+                                                        bodyBusiness.length,
+                                                        (bodyBusinessIndex) {
+                                                      final bodyBusinessItem =
+                                                          bodyBusiness[
+                                                              bodyBusinessIndex];
+                                                      return AutoSizeText(
+                                                        bodyBusinessItem,
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      );
+                                                    }).divide(
+                                                        const SizedBox(height: 5.0)),
+                                                  );
+                                                },
                                               ),
                                             ),
                                           ),

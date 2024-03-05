@@ -383,7 +383,7 @@ class _BusinessesWidgetState extends State<BusinessesWidget> {
                 ),
               ),
               Container(
-                height: MediaQuery.sizeOf(context).height * 0.12,
+                height: MediaQuery.sizeOf(context).height * 0.08,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Color(0xFFC4B09F), Color(0x00C4B09F)],
